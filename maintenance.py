@@ -207,7 +207,12 @@ class DailyMaintenance(webapp2.RequestHandler):
         #[START UPDATE CONTESTS]
 
         #Get today and also yesterday, since contests up until yesterday are relevant
-        today = datetime.date.today()
+        ##today = datetime.date.today() //replaced
+		time_shift_hours=-1
+		today = datetime.datetime.now()
+		today = today + timedelta(hours=time_shift_hours)
+		##end change
+		
         date_adjust = datetime.timedelta(days=-1)
         yesterday = today + date_adjust
 
