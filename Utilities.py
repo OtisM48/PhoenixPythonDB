@@ -46,6 +46,12 @@ def money_external(money):
 	money /= 100
 	plat = "{:,}".format(money)
 	return  (plat + 'p ' + str(gold) + 'g ' + str(silver) + 's ' + str(copper) + 'c')
+	
+def xp_external(xp):
+	xp = int(xp)
+	xp_ext = "{:,}".format(xp)
+	return xp_ext 
+
 
 def todayUTC():
 	utc = datetime.datetime.utcnow()
